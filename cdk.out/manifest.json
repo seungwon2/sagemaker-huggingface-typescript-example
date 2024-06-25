@@ -1,0 +1,107 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "RerankerStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "RerankerStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "RerankerStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "RerankerStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6eee82909dec1440393d6ae4b11ef1c1191320d48cb02287c623f05e28bf7caa.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "RerankerStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "RerankerStack.assets"
+      ],
+      "metadata": {
+        "/RerankerStack/Reranker/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RerankerRoleDAAED19A"
+          }
+        ],
+        "/RerankerStack/Reranker/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RerankerRoleDefaultPolicy6BB7CA84"
+          }
+        ],
+        "/RerankerStack/DlcRepositoryAccountMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DlcRepositoryAccountMap"
+          }
+        ],
+        "/RerankerStack/Dongjin-kr-ko-reranker-model-Reranker": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DongjinkrkorerankermodelReranker"
+          }
+        ],
+        "/RerankerStack/EndpointConfig-Reranker": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointConfigReranker"
+          }
+        ],
+        "/RerankerStack/Dongjin-kr-ko-reranker-endpoint-Reranker": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DongjinkrkorerankerendpointReranker"
+          }
+        ],
+        "/RerankerStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/RerankerStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/RerankerStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/RerankerStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "RerankerStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
